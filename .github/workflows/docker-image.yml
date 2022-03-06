@@ -5,7 +5,8 @@ on: [push]
 #Env Variable
 env:
         DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }} 
+        DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        REPO: ${{ secrets.REPO }} 
         
 
 jobs:
@@ -14,11 +15,11 @@ jobs:
                 steps:
                         - uses: actions/checkout@v2
                         - name: Build the Docker image
-                          run : docker build . --file Dockerfile --tag $DOCKERHUB_USERNAME/pfd:latest
+                          run : docker build . --file Dockerfile --tag $REPO:latest
                         
                         - name: docker login
                           run: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_TOKEN
 
                         - name: Docker Push
-                          run: docker push $DOCKERHUB_USERNAME/kasad/pdf:latest
+                          run: docker push $REPO:latest
         
