@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: python:3.8-alpine
+    runs-on: ubuntu-latest
 
     steps:
     -
