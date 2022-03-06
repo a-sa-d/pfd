@@ -6,10 +6,14 @@ Flask is a micro web framework written in Python. It is classified as a microfra
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install flask.
 
 ```bash
-pip install flask
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
 ## Usage
 
 ```python
-import flask
+from flask import Flask
+```
+
+
