@@ -1,5 +1,7 @@
 FROM python:3.8-alpine
 
+MAINTAINER Asad Khan
+
 COPY ./app/requirements.txt /app/requirements.txt
 
 WORKDIR /app
