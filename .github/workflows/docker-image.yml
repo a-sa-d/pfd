@@ -6,6 +6,7 @@ on: [push]
 env:
         DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
         DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }} 
+        
 
 jobs:
         build-docker-images:
@@ -19,5 +20,5 @@ jobs:
                           run: docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_TOKEN
 
                         - name: Docker Push
-                          run: docker push $DOCKERHUB_USERNAME/pdf:latest
+                          run: docker push $DOCKERHUB_USERNAME/kasad/pdf:latest
         
