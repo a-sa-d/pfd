@@ -6,7 +6,7 @@ COPY ./app/requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-RUN apk add --update \
+RUN apk add --update && apk add bash \
   && pip install --upgrade pip  \
   && pip install -r requirements.txt \
   && rm -rf /var/cache/apk/*

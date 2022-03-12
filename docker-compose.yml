@@ -20,3 +20,7 @@ services:
                 environment:
                         POSTGRES_PASSWORD: Abcd@1234
                         POSTGRES_USER: postgres
+networks:
+        default:
+                external:
+                        name: my-test
