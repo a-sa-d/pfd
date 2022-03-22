@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-pythonflask
+  labels:
+    app: eks-pythonflask
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eks-pythonflask
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: eks-pythonflask
+    spec:
+      containers:
+      - image: kasad/pfd:latest
+        imagePullPolicy: Always
+        name: eks-pythonflask
+        ports:
+        - containerPort: 8008
+          protocol: TCP
